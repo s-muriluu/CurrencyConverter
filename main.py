@@ -1,5 +1,5 @@
-from api import getData
-from gui import Gui
+from scripts.api import getData
+from scripts.gui import Gui
 
 apiUrl = r'https://economia.awesomeapi.com.br/json/last/USD-BRL'
 info = getData(apiUrl)

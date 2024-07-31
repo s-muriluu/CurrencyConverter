@@ -1,6 +1,6 @@
 import tkinter as tk
 import ttkbootstrap as ttk
-from conversor import dollarToReal, realToDollar
+from scripts.conversor import dollarToReal, realToDollar
 
 class Gui:
     def __init__(self, dollar, date):
