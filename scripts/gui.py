@@ -22,7 +22,7 @@ class Gui:
         self.window.resizable(0, 0)
 
 class MainGui(Gui):
-    def __init__(self, exchange, date):
+    def __init__(self, exchange, date) -> None:
         '''
         Inicializa a interface gráfica principal com as informações de taxa de câmbio e data.
         
@@ -36,7 +36,7 @@ class MainGui(Gui):
         # Cria uma instância da classe Converter com a taxa de câmbio fornecida
         self.converter = Converter(self.exchange)
     
-    def header(self):
+    def header(self) -> None:
         '''
         Cria e exibe o cabeçalho da interface gráfica com o título e as informações da taxa de câmbio.
         '''
@@ -53,7 +53,7 @@ class MainGui(Gui):
         self.labelDate = ttk.Label(master=self.window,text=self.date, font='Arial 16')
         self.labelDate.pack()
     
-    def frame1(self):
+    def frame1(self) -> None:
         '''
         Cria o primeiro quadro da interface gráfica para entrada de valor em dólares.
         '''
@@ -69,7 +69,7 @@ class MainGui(Gui):
         # Posiciona o quadro na janela
         self.frameDollar.pack(pady=10)
     
-    def frame2(self):
+    def frame2(self) -> None:
         '''
         Cria o segundo quadro da interface gráfica para entrada de valor em reais.
         '''
@@ -85,7 +85,7 @@ class MainGui(Gui):
         # Posiciona o quadro na janela
         self.frameReal.pack()
 
-    def run(self):
+    def run(self) -> None:
         '''
         Inicializa e executa a interface gráfica, configurando a interação entre os campos de entrada.
         '''
@@ -100,7 +100,7 @@ class MainGui(Gui):
         # Inicia o loop principal da interface gráfica
         self.window.mainloop()
 
-    def dollarConvert(self, *args):
+    def dollarConvert(self, *args) -> None:
         '''
         Converte o valor em dólares para reais e atualiza o campo de entrada de reais.
         '''
@@ -115,7 +115,7 @@ class MainGui(Gui):
             # Se houver um erro, define o valor do campo de reais como 0
             self.realVar.set(0)
 
-    def realConvert(self, *args):
+    def realConvert(self, *args) -> None:
         '''
         Converte o valor em reais para dólares e atualiza o campo de entrada de dólares.
         '''
@@ -141,7 +141,7 @@ class ErrorGui(Gui):
         super().__init__()
         self.errorMsg = errorMsg
     
-    def message(self):
+    def message(self) -> None:
         '''
         Cria e exibe a mensagem de erro na interface gráfica.
         '''
@@ -152,7 +152,7 @@ class ErrorGui(Gui):
         self.labelTitle = ttk.Label(master=self.window, text=self.errorMsg, font='Arial 16')
         self.labelTitle.pack()
     
-    def run(self):
+    def run(self) -> None:
         # Configura e exibe a mensagem de erro
         self.message()
         # Inicia o loop principal da interface gráfica
